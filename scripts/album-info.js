@@ -5,8 +5,3 @@
 
 //I immediately see the album cover image and title, the artist's name, and some general
 //release info.
-
-{
-  $('#album-title').text(album.title);
-  $('img#album-cover-art').attr('src', album.albumArtUrl);
-}
