@@ -1,11 +1,24 @@
-//User story: As a listener, I want to see the album's songs and play/pause songs by clicking
-//on them so that I can change tracks.
+{
+  album.songs.forEach( (song, index) => {
+    song.element = $(`
+      <tr>
+        <td>${index}</td>
+        <td>
+          <button>
+            <span class="song-number">${index + 1}</span>
+            <span class="ion-play"></span>
+            <span class="ion-pause"></span>
+          </button>
+        </td>
+        <td>${song.title}</td>
+        <td>${song.duration}</td>
+      </tr>
+    `);
 
-//Acceptance criteria:
+    song.element.on('click', event => {
+      player.playPause(song);
+    });
 
-//I see a list of the album's songs.
-//When I click on a song, it plays.
-//When I click on a playing song, it pauses.
-//When I hover over a song, it displays a "play" button in place of the song number.
-//The currently playing song displays a "pause" button in place of the song number.
-//A paused song displays a "play" button in place of the song number.
+    $('#song-list').append(song.element);
+  });
+}
