@@ -21,13 +21,8 @@
     if (player.playState !== 'playing') { return; }
 
     const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
-
-    //const firstSong = album.songs[0];
-
     const prevSongIndex = currentSongIndex - 1;
-
-    if (prevSongIndex <= album.songs[0]) { return; } 
-    //if (prevSongIndex <= firstSong) { return; }
+    if (prevSongIndex < 0) { return; }
 
     const prevSong = album.songs[prevSongIndex];
     player.playPause(prevSong);
