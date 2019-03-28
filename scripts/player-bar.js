@@ -14,4 +14,22 @@
     const nextSong = album.songs[nextSongIndex];
     player.playPause(nextSong);
   });
+
+
+
+  $('button#previous').on('click', function() {
+    if (player.playState !== 'playing') { return; }
+
+    const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
+
+    //const firstSong = album.songs[0];
+
+    const prevSongIndex = currentSongIndex - 1;
+
+    if (prevSongIndex <= album.songs[0]) { return; } 
+    //if (prevSongIndex <= firstSong) { return; }
+
+    const prevSong = album.songs[prevSongIndex];
+    player.playPause(prevSong);
+  });
 }
