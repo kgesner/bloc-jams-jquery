@@ -1,11 +1,20 @@
-class Helper = function() {
-  const helper = Helper;
+//class Helper = function() {
+//  new helper();
+//  this.playPauseAndUpdate(song).player.playPause(song);
+//  }
 
-  constructor () {
-    this.playPauseAndUpdate(song).player.playPause(song);
-  }
+//  update the totalTime
+
+
+class Helper {
+  playPauseAndUpdate(song) {
+    player.playPause(song);
+    const totalTime = player.getDuration();
+    $('#time-control .total-time').text( totalTime );
+  };
 }
 
+const helper = new Helper();
 
 
 //Create class Helper and instantiate class as variable
