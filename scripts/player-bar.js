@@ -16,7 +16,7 @@
   });
 
 
-<<<<<<< HEAD
+
 
   $('button#previous').on('click', function() {
     if (player.playState !== 'playing') { return; }
@@ -28,7 +28,7 @@
     const prevSong = album.songs[prevSongIndex];
     player.playPause(prevSong);
   });
-=======
+
   $('#time-control input').on( 'input', function (event) {
     player.skipTo(event.target.value);
   });
@@ -46,6 +46,3 @@
   $('#volume-control input').on( 'input', function (event) {
     player.setVolume(event.target.value);
   });
-
->>>>>>> assignment-11-blocjams
-}
