@@ -17,7 +17,6 @@
 
 
 
-
   $('button#previous').on('click', function() {
     if (player.playState !== 'playing') { return; }
 
@@ -26,8 +25,9 @@
     if (prevSongIndex < 0) { return; }
 
     const prevSong = album.songs[prevSongIndex];
-    player.playPause(prevSong);
+    helper.playPauseAndUpdate(prevSong);
   });
+
 
   $('#time-control input').on( 'input', function (event) {
     player.skipTo(event.target.value);
@@ -46,3 +46,4 @@
   $('#volume-control input').on( 'input', function (event) {
     player.setVolume(event.target.value);
   });
+}
